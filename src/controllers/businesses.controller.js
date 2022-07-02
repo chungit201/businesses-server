@@ -15,9 +15,8 @@ const businessesId= catchAsync(async (req, res) => {
   res.json(businesses);
 });
 
-
 const queryBusinesses= catchAsync(async (req, res) => {
-  const filter = pick(req.query, ["Created", "DiaChiCongTy"]);
+  const filter = pick(req.query, ["Created", "DiaChiCongTy","TinhThanhTitle","DiaChiCongTy","Title"]);
   const options = pick(req.query, ["sortBy", "limit", "page"]);
   const result = await businessVnService.queryBusinesses(filter, options);
   res.json(result);
