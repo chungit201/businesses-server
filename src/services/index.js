@@ -6,3 +6,4 @@ module.exports.cityService = require('./city.service');
 module.exports.businessVnService = require ('./businesses.service')
 module.exports.districtService = require('./district.service')
 module.exports.wardService = require ('./ward.service')
+module.exports.industryService = require('./industry.service')
