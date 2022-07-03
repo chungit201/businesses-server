@@ -2,7 +2,6 @@ const pick = require("../utils/pick");
 const catchAsync = require("../utils/catchAsync");
 const { cityService } = require("../services");
 
-
 const createCity = catchAsync(async (req, res) => {
   const city = await cityService.createCity(req.body);
   res.json({
@@ -10,6 +9,11 @@ const createCity = catchAsync(async (req, res) => {
     city
   });
 });
+
+const cityById = catchAsync(async (req,res)=>{
+  const city = await cityService.getCityId(req.params.cityId);
+  res.json(city);
+})
 
 const queryCity = catchAsync(async (req, res) => {
   const filter = pick(req.query, ["Title", "role"]);
@@ -20,5 +24,6 @@ const queryCity = catchAsync(async (req, res) => {
 
 module.exports = {
   createCity,
-  queryCity
+  queryCity,
+  cityById
 }
