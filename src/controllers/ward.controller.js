@@ -11,7 +11,7 @@ const createWard = catchAsync(async (req, res) => {
 });
 
 const queryWards = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ["Title", "role"]);
+  const filter = pick(req.query, ["Title", "QuanHuyenID"]);
   const options = pick(req.query, ["sortBy", "limit", "page"]);
   const result = await wardService.queryWard(filter, options);
   res.json(result);

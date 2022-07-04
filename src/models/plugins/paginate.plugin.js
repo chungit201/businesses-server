@@ -41,7 +41,7 @@ const paginate = (schema) => {
     const select = options.select ?? {};
     const findFilter = {...filter};
     for (const value in filter) {
-      if (!mongoose.isValidObjectId(filter[value]) && (!['level', '_id', 'isSample','TinhThanhID', 'role','sale',"status","lock"].includes(value)) && (value !== "$or") && (value !== "$in")) {
+      if (!mongoose.isValidObjectId(filter[value]) && (!['level', '_id', 'isSample','TinhThanhID','QuanHuyenID', 'role','sale',"status","lock"].includes(value)) && (value !== "$or") && (value !== "$in")) {
         if (value === "queryRange") {
           findFilter["$and"] = filter[value]["start"] && filter[value]["end"] ? [{
               $expr: {
