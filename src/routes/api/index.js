@@ -7,7 +7,8 @@ const cityRoute = require('./city.route');
 const businessRoute = require('./businesses.route');
 const districtRoute = require('./district.route');
 const wardRoute = require('./ward.route');
-const industryRoute = require('./industry.route')
+const industryRoute = require('./industry.route');
+const businessesWardRoute = require('./businesses-ward.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -38,6 +39,10 @@ const defaultRoutes = [
   {
     path: '/industry',
     route: industryRoute
+  },
+  {
+    path: '/businesses-wards',
+    route: businessesWardRoute
   }
 ];
 

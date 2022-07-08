@@ -5,3 +5,4 @@ module.exports.businessesController = require("./businesses.controller");
 module.exports.districtController = require("./district.controller");
 module.exports.wardController = require('./ward.controller')
 module.exports.industryController = require('./industry.controller')
+module.exports.businessesWardController  = require('./businesses-ward.controller')
