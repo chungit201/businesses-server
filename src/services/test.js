@@ -1,4 +1,4 @@
-//hanoi : 150
+//hanoi : 200
 // an-giang:100
 // binh-duong:100
 // binh-phuoc:100

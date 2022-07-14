@@ -1,6 +1,7 @@
 const pick = require("../utils/pick");
 const catchAsync = require("../utils/catchAsync");
 const { industryService } = require("../services");
+const { getIndustryList } = require("../services/industry.service");
 
 
 const createIndustry = catchAsync(async (req, res) => {
@@ -10,6 +11,11 @@ const createIndustry = catchAsync(async (req, res) => {
     industry
   });
 });
+
+const getIndustryID = catchAsync(async (req,res)=>{
+  const industry = await industryService.getIndustryId(req.query.SolrID)
+  res.json(industry)
+})
 
 const queryIndustry  = catchAsync(async (req, res) => {
   const filter = pick(req.query, ["Title", "ID"]);
@@ -27,6 +33,7 @@ const listDataIndustry = catchAsync(async (req,res)=>{
 })
 
 module.exports = {
+  getIndustryID,
   createIndustry,
   queryIndustry,
   listDataIndustry
