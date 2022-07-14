@@ -25,10 +25,12 @@ const paginate = (schema) => {
   schema.statics.paginate = async function (filter, options) {
     let sort = '';
     if (options.sortBy) {
+      console.log(options.sortBy);
       const sortingCriteria = [];
       options.sortBy.split(',').forEach((sortOption) => {
         const [key, order] = sortOption.split(':');
         sortingCriteria.push((order === 'desc' ? '-' : '') + key);
+        console.log(sortingCriteria);
       });
       sort = sortingCriteria.join(' ');
     } else {
